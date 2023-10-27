@@ -26,7 +26,7 @@ include_directories(${ANTLR4_INCLUDE_DIRS})
 
 # set variable pointing to the antlr tool that supports C++
 # this is not required if the jar file can be found under PATH environment
-set(ANTLR_EXECUTABLE /Users/rebelice/antlr/antlr-4.13.1-complete.jar)
+set(ANTLR_EXECUTABLE ../resources/antlr-4.13.1-complete.jar)
 # add macros to generate ANTLR Cpp code from grammar
 find_package(ANTLR REQUIRED)
 
