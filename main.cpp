@@ -1,20 +1,23 @@
 #include "TSqlParser.h"
 #include "TSqlLexer.h"
-#include "TSqlParserBaseListener.h"
 #include "antlr4-runtime.h"
 #include <iostream>
 #include <chrono>
 
+using namespace antlrcpptest;
 using namespace antlr4;
-using namespace parser;
 
 int main(int argc, const char* argv[]) {
   std::ifstream stream;
   stream.open(argv[1]);
+//   std::string line;
+//   while (std::getline(stream, line)) {
+//       std::cout << line << std::endl;
+//   }
   ANTLRInputStream input(stream);
-  TSqlLexer lexer(&input);
+  antlrcpptest::TSqlLexer lexer(&input);
   CommonTokenStream tokens(&lexer);
-  TSqlParser parser(&tokens);
+  antlrcpptest::TSqlParser parser(&tokens);
 
   auto start = std::chrono::high_resolution_clock::now();
 
