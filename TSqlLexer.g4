@@ -27,7 +27,10 @@ lexer grammar TSqlLexer;
 
 // Basic keywords (from https://msdn.microsoft.com/en-us/library/ms189822.aspx)
 
-options { caseInsensitive = true; }
+options { 
+    caseInsensitive = true;
+    superClass = 'TSqlBaseLexer';
+}
 
 
 //Keywords that can exist in ID etc

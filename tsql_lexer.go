@@ -15,7 +15,7 @@ var _ = sync.Once{}
 var _ = unicode.IsLetter
 
 type TSqlLexer struct {
-	*antlr.BaseLexer
+	TSqlBaseLexer
 	channelNames []string
 	modeNames    []string
 	// TODO: EOF string
