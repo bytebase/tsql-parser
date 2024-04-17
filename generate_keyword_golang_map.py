@@ -38,6 +38,8 @@ if __name__ == "__main__":
                     break
                 buffer.append(content_lines[j])
         with open("keyword_map.go", "w") as f:
+            f.write(r"// Code generated from generate_keyword_golang_map.py. DO NOT EDIT")
+            f.write("\n\n")
             f.write(r"package parser")
             f.write("\n\n")
             f.write(r"var keywordMap map[int]struct{} = map[int]struct{}{")
@@ -46,7 +48,7 @@ if __name__ == "__main__":
                 f.write("\n")
                 f.write(" "*4)
                 f.write(f"TSqlLexer{candidate}:")
-                f.write(" struct{}{},")
+                f.write(" {},") 
             f.write("\n")
             f.write("}")
         print("Write keyword map to keyword_map.go successfully!")
