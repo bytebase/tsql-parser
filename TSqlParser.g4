@@ -1921,7 +1921,7 @@ delete_statement
       FROM? delete_statement_from
       with_table_hints?
       output_clause?
-      (FROM table_sources)?
+      from_table_sources?
       (WHERE (search_condition | CURRENT OF (GLOBAL? cursor_name | cursor_var=LOCAL_ID)))?
       for_clause? option_clause? ';'?
     ;
@@ -3879,11 +3879,15 @@ query_specification
       columns=select_list
       // https://msdn.microsoft.com/en-us/library/ms188029.aspx
       (INTO into=table_name)?
-      (FROM from=table_sources)?
+      from_table_sources?
       (WHERE where=search_condition)?
       // https://msdn.microsoft.com/en-us/library/ms177673.aspx
       (GROUP BY ((groupByAll=ALL? groupBys+=group_by_item (',' groupBys+=group_by_item)*) | GROUPING SETS '(' groupSets+=grouping_sets_item (',' groupSets+=grouping_sets_item)* ')'))?
       (HAVING having=search_condition)?
+    ;
+
+from_table_sources
+    : FROM from=table_sources
     ;
 
 // https://msdn.microsoft.com/en-us/library/ms189463.aspx

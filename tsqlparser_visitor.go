@@ -1,4 +1,4 @@
-// Code generated from TSqlParser.g4 by ANTLR 4.13.0. DO NOT EDIT.
+// Code generated from TSqlParser.g4 by ANTLR 4.13.1. DO NOT EDIT.
 
 package parser // TSqlParser
 import "github.com/antlr4-go/antlr/v4"
@@ -1425,6 +1425,9 @@ type TSqlParserVisitor interface {
 
 	// Visit a parse tree produced by TSqlParser#query_specification.
 	VisitQuery_specification(ctx *Query_specificationContext) interface{}
+
+	// Visit a parse tree produced by TSqlParser#from_table_sources.
+	VisitFrom_table_sources(ctx *From_table_sourcesContext) interface{}
 
 	// Visit a parse tree produced by TSqlParser#top_clause.
 	VisitTop_clause(ctx *Top_clauseContext) interface{}

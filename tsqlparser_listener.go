@@ -1,4 +1,4 @@
-// Code generated from TSqlParser.g4 by ANTLR 4.13.0. DO NOT EDIT.
+// Code generated from TSqlParser.g4 by ANTLR 4.13.1. DO NOT EDIT.
 
 package parser // TSqlParser
 import "github.com/antlr4-go/antlr/v4"
@@ -1425,6 +1425,9 @@ type TSqlParserListener interface {
 
 	// EnterQuery_specification is called when entering the query_specification production.
 	EnterQuery_specification(c *Query_specificationContext)
+
+	// EnterFrom_table_sources is called when entering the from_table_sources production.
+	EnterFrom_table_sources(c *From_table_sourcesContext)
 
 	// EnterTop_clause is called when entering the top_clause production.
 	EnterTop_clause(c *Top_clauseContext)
@@ -3867,6 +3870,9 @@ type TSqlParserListener interface {
 
 	// ExitQuery_specification is called when exiting the query_specification production.
 	ExitQuery_specification(c *Query_specificationContext)
+
+	// ExitFrom_table_sources is called when exiting the from_table_sources production.
+	ExitFrom_table_sources(c *From_table_sourcesContext)
 
 	// ExitTop_clause is called when exiting the top_clause production.
 	ExitTop_clause(c *Top_clauseContext)

@@ -1,4 +1,4 @@
-// Code generated from TSqlParser.g4 by ANTLR 4.13.0. DO NOT EDIT.
+// Code generated from TSqlParser.g4 by ANTLR 4.13.1. DO NOT EDIT.
 
 package parser // TSqlParser
 import "github.com/antlr4-go/antlr/v4"
@@ -1896,6 +1896,10 @@ func (v *BaseTSqlParserVisitor) VisitSql_union(ctx *Sql_unionContext) interface{
 }
 
 func (v *BaseTSqlParserVisitor) VisitQuery_specification(ctx *Query_specificationContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseTSqlParserVisitor) VisitFrom_table_sources(ctx *From_table_sourcesContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
