@@ -3776,12 +3776,12 @@ constant_LOCAL_ID
 // Operator precendence: https://docs.microsoft.com/en-us/sql/t-sql/language-elements/operator-precedence-transact-sql
 expression
     : primitive_expression
+    | full_column_name
     | function_call
     | expression '.' (value_call | query_call | exist_call | modify_call)
     | expression '.' hierarchyid_call
     | expression COLLATE id_
     | case_expression
-    | full_column_name
     | bracket_expression
     | unary_operator_expression
     | expression op=('*' | '/' | '%') expression
@@ -6030,7 +6030,7 @@ keyword
     | QUARTER_ABBR
     | MONTH_ABBR
     | DAYOFYEAR_ABBR
-    | DAY_ABBR
+    | DAY_ABBR 
     | WEEK_ABBR
     | HOUR_ABBR
     | MINUTE_ABBR
