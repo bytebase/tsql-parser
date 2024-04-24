@@ -3092,6 +3092,18 @@ func (s *BaseTSqlParserListener) EnterQuery_specification(ctx *Query_specificati
 // ExitQuery_specification is called when production query_specification is exited.
 func (s *BaseTSqlParserListener) ExitQuery_specification(ctx *Query_specificationContext) {}
 
+// EnterGroup_by_clause is called when production group_by_clause is entered.
+func (s *BaseTSqlParserListener) EnterGroup_by_clause(ctx *Group_by_clauseContext) {}
+
+// ExitGroup_by_clause is called when production group_by_clause is exited.
+func (s *BaseTSqlParserListener) ExitGroup_by_clause(ctx *Group_by_clauseContext) {}
+
+// EnterHaving_clause is called when production having_clause is entered.
+func (s *BaseTSqlParserListener) EnterHaving_clause(ctx *Having_clauseContext) {}
+
+// ExitHaving_clause is called when production having_clause is exited.
+func (s *BaseTSqlParserListener) ExitHaving_clause(ctx *Having_clauseContext) {}
+
 // EnterFrom_table_sources is called when production from_table_sources is entered.
 func (s *BaseTSqlParserListener) EnterFrom_table_sources(ctx *From_table_sourcesContext) {}
 

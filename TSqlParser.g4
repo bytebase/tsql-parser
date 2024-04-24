@@ -3882,9 +3882,17 @@ query_specification
       from_table_sources?
       (WHERE where=search_condition)?
       // https://msdn.microsoft.com/en-us/library/ms177673.aspx
-      (GROUP BY ((groupByAll=ALL? groupBys+=group_by_item (',' groupBys+=group_by_item)*) | GROUPING SETS '(' groupSets+=grouping_sets_item (',' groupSets+=grouping_sets_item)* ')'))?
-      (HAVING having=search_condition)?
+      group_by_clause?
+      having_clause?
     ;
+
+group_by_clause
+    : GROUP BY ((groupByAll=ALL? groupBys+=group_by_item (',' groupBys+=group_by_item)*) | GROUPING SETS '(' groupSets+=grouping_sets_item (',' groupSets+=grouping_sets_item)* ')')
+    ;
+
+having_clause
+   : HAVING having=search_condition
+   ;
 
 from_table_sources
     : FROM from=table_sources

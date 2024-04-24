@@ -1426,6 +1426,12 @@ type TSqlParserVisitor interface {
 	// Visit a parse tree produced by TSqlParser#query_specification.
 	VisitQuery_specification(ctx *Query_specificationContext) interface{}
 
+	// Visit a parse tree produced by TSqlParser#group_by_clause.
+	VisitGroup_by_clause(ctx *Group_by_clauseContext) interface{}
+
+	// Visit a parse tree produced by TSqlParser#having_clause.
+	VisitHaving_clause(ctx *Having_clauseContext) interface{}
+
 	// Visit a parse tree produced by TSqlParser#from_table_sources.
 	VisitFrom_table_sources(ctx *From_table_sourcesContext) interface{}
 
