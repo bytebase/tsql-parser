@@ -6038,7 +6038,7 @@ keyword
     | QUARTER_ABBR
     | MONTH_ABBR
     | DAYOFYEAR_ABBR
-    | DAY_ABBR 
+    | DAY_ABBR
     | WEEK_ABBR
     | HOUR_ABBR
     | MINUTE_ABBR
