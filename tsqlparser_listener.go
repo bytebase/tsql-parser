@@ -1,4 +1,4 @@
-// Code generated from TSqlParser.g4 by ANTLR 4.13.0. DO NOT EDIT.
+// Code generated from TSqlParser.g4 by ANTLR 4.13.1. DO NOT EDIT.
 
 package parser // TSqlParser
 import "github.com/antlr4-go/antlr/v4"
@@ -1425,6 +1425,15 @@ type TSqlParserListener interface {
 
 	// EnterQuery_specification is called when entering the query_specification production.
 	EnterQuery_specification(c *Query_specificationContext)
+
+	// EnterGroup_by_clause is called when entering the group_by_clause production.
+	EnterGroup_by_clause(c *Group_by_clauseContext)
+
+	// EnterHaving_clause is called when entering the having_clause production.
+	EnterHaving_clause(c *Having_clauseContext)
+
+	// EnterFrom_table_sources is called when entering the from_table_sources production.
+	EnterFrom_table_sources(c *From_table_sourcesContext)
 
 	// EnterTop_clause is called when entering the top_clause production.
 	EnterTop_clause(c *Top_clauseContext)
@@ -3867,6 +3876,15 @@ type TSqlParserListener interface {
 
 	// ExitQuery_specification is called when exiting the query_specification production.
 	ExitQuery_specification(c *Query_specificationContext)
+
+	// ExitGroup_by_clause is called when exiting the group_by_clause production.
+	ExitGroup_by_clause(c *Group_by_clauseContext)
+
+	// ExitHaving_clause is called when exiting the having_clause production.
+	ExitHaving_clause(c *Having_clauseContext)
+
+	// ExitFrom_table_sources is called when exiting the from_table_sources production.
+	ExitFrom_table_sources(c *From_table_sourcesContext)
 
 	// ExitTop_clause is called when exiting the top_clause production.
 	ExitTop_clause(c *Top_clauseContext)
