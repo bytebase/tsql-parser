@@ -11,7 +11,7 @@ func (v *BaseTSqlParserVisitor) VisitTsql_file(ctx *Tsql_fileContext) interface{
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseTSqlParserVisitor) VisitBatch_with_out_go(ctx *Batch_with_out_goContext) interface{} {
+func (v *BaseTSqlParserVisitor) VisitBatch_without_go(ctx *Batch_without_goContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 

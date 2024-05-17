@@ -26,11 +26,11 @@ func (s *BaseTSqlParserListener) EnterTsql_file(ctx *Tsql_fileContext) {}
 // ExitTsql_file is called when production tsql_file is exited.
 func (s *BaseTSqlParserListener) ExitTsql_file(ctx *Tsql_fileContext) {}
 
-// EnterBatch_with_out_go is called when production batch_with_out_go is entered.
-func (s *BaseTSqlParserListener) EnterBatch_with_out_go(ctx *Batch_with_out_goContext) {}
+// EnterBatch_without_go is called when production batch_without_go is entered.
+func (s *BaseTSqlParserListener) EnterBatch_without_go(ctx *Batch_without_goContext) {}
 
-// ExitBatch_with_out_go is called when production batch_with_out_go is exited.
-func (s *BaseTSqlParserListener) ExitBatch_with_out_go(ctx *Batch_with_out_goContext) {}
+// ExitBatch_without_go is called when production batch_without_go is exited.
+func (s *BaseTSqlParserListener) ExitBatch_without_go(ctx *Batch_without_goContext) {}
 
 // EnterBatch_level_statement is called when production batch_level_statement is entered.
 func (s *BaseTSqlParserListener) EnterBatch_level_statement(ctx *Batch_level_statementContext) {}

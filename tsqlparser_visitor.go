@@ -10,8 +10,8 @@ type TSqlParserVisitor interface {
 	// Visit a parse tree produced by TSqlParser#tsql_file.
 	VisitTsql_file(ctx *Tsql_fileContext) interface{}
 
-	// Visit a parse tree produced by TSqlParser#batch_with_out_go.
-	VisitBatch_with_out_go(ctx *Batch_with_out_goContext) interface{}
+	// Visit a parse tree produced by TSqlParser#batch_without_go.
+	VisitBatch_without_go(ctx *Batch_without_goContext) interface{}
 
 	// Visit a parse tree produced by TSqlParser#batch_level_statement.
 	VisitBatch_level_statement(ctx *Batch_level_statementContext) interface{}

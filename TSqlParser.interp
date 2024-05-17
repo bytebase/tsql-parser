@@ -2420,7 +2420,7 @@ PLACEHOLDER
 
 rule names:
 tsql_file
-batch_with_out_go
+batch_without_go
 batch_level_statement
 sql_clauses
 dml_clause

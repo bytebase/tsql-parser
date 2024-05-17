@@ -10,8 +10,8 @@ type TSqlParserListener interface {
 	// EnterTsql_file is called when entering the tsql_file production.
 	EnterTsql_file(c *Tsql_fileContext)
 
-	// EnterBatch_with_out_go is called when entering the batch_with_out_go production.
-	EnterBatch_with_out_go(c *Batch_with_out_goContext)
+	// EnterBatch_without_go is called when entering the batch_without_go production.
+	EnterBatch_without_go(c *Batch_without_goContext)
 
 	// EnterBatch_level_statement is called when entering the batch_level_statement production.
 	EnterBatch_level_statement(c *Batch_level_statementContext)
@@ -2464,8 +2464,8 @@ type TSqlParserListener interface {
 	// ExitTsql_file is called when exiting the tsql_file production.
 	ExitTsql_file(c *Tsql_fileContext)
 
-	// ExitBatch_with_out_go is called when exiting the batch_with_out_go production.
-	ExitBatch_with_out_go(c *Batch_with_out_goContext)
+	// ExitBatch_without_go is called when exiting the batch_without_go production.
+	ExitBatch_without_go(c *Batch_without_goContext)
 
 	// ExitBatch_level_statement is called when exiting the batch_level_statement production.
 	ExitBatch_level_statement(c *Batch_level_statementContext)
