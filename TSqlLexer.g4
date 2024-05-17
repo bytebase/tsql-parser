@@ -27,7 +27,10 @@ lexer grammar TSqlLexer;
 
 // Basic keywords (from https://msdn.microsoft.com/en-us/library/ms189822.aspx)
 
-options { caseInsensitive = true; }
+options { 
+    caseInsensitive = true;
+    superClass = 'TSqlBaseLexer';
+}
 
 
 //Keywords that can exist in ID etc
@@ -1204,7 +1207,7 @@ FETCH_STATUS:                          '@@FETCH_STATUS';
 
 IPV4_ADDR:                             DEC_DIGIT+ '.' DEC_DIGIT+ '.' DEC_DIGIT+ '.' DEC_DIGIT+;
 
-SPACE:              [ \t\r\n]+    -> channel(HIDDEN);
+SPACE:              [ \t\r\n]    -> channel(HIDDEN);
 // https://docs.microsoft.com/en-us/sql/t-sql/language-elements/slash-star-comment-transact-sql
 COMMENT:            '/*' (COMMENT | .)*? '*/' -> channel(HIDDEN);
 LINE_COMMENT:       '--' ~[\r\n]* -> channel(HIDDEN);

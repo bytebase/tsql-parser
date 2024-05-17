@@ -1920,7 +1920,7 @@ delete_statement
       FROM? delete_statement_from
       with_table_hints?
       output_clause?
-      (FROM table_sources)?
+      from_table_sources?
       (WHERE (search_condition | CURRENT OF (GLOBAL? cursor_name | cursor_var=LOCAL_ID)))?
       for_clause? option_clause? ';'?
     ;
@@ -3774,12 +3774,12 @@ constant_LOCAL_ID
 // Operator precendence: https://docs.microsoft.com/en-us/sql/t-sql/language-elements/operator-precedence-transact-sql
 expression
     : primitive_expression
+    | full_column_name
     | function_call
     | expression '.' (value_call | query_call | exist_call | modify_call)
     | expression '.' hierarchyid_call
     | expression COLLATE id_
     | case_expression
-    | full_column_name
     | bracket_expression
     | unary_operator_expression
     | expression op=('*' | '/' | '%') expression
@@ -3877,11 +3877,23 @@ query_specification
       columns=select_list
       // https://msdn.microsoft.com/en-us/library/ms188029.aspx
       (INTO into=table_name)?
-      (FROM from=table_sources)?
+      from_table_sources?
       (WHERE where=search_condition)?
       // https://msdn.microsoft.com/en-us/library/ms177673.aspx
-      (GROUP BY ((groupByAll=ALL? groupBys+=group_by_item (',' groupBys+=group_by_item)*) | GROUPING SETS '(' groupSets+=grouping_sets_item (',' groupSets+=grouping_sets_item)* ')'))?
-      (HAVING having=search_condition)?
+      group_by_clause?
+      having_clause?
+    ;
+
+group_by_clause
+    : GROUP BY ((groupByAll=ALL? groupBys+=group_by_item (',' groupBys+=group_by_item)*) | GROUPING SETS '(' groupSets+=grouping_sets_item (',' groupSets+=grouping_sets_item)* ')')
+    ;
+
+having_clause
+   : HAVING having=search_condition
+   ;
+
+from_table_sources
+    : FROM from=table_sources
     ;
 
 // https://msdn.microsoft.com/en-us/library/ms189463.aspx

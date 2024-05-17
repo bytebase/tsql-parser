@@ -1,0 +1,1 @@
+clang++ -v -std=c++17 -I/opt/homebrew/Cellar/antlr4-cpp-runtime/4.13.1/include/antlr4-runtime/ TSqlLexer.cpp TSqlParser.cpp parser_test.cpp -L/opt/homebrew/Cellar/antlr4-cpp-runtime/4.13.1/lib/ -lantlr4-runtime -o parser_test

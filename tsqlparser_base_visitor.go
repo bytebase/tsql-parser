@@ -1899,6 +1899,18 @@ func (v *BaseTSqlParserVisitor) VisitQuery_specification(ctx *Query_specificatio
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseTSqlParserVisitor) VisitGroup_by_clause(ctx *Group_by_clauseContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseTSqlParserVisitor) VisitHaving_clause(ctx *Having_clauseContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseTSqlParserVisitor) VisitFrom_table_sources(ctx *From_table_sourcesContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseTSqlParserVisitor) VisitTop_clause(ctx *Top_clauseContext) interface{} {
 	return v.VisitChildren(ctx)
 }
