@@ -29,6 +29,7 @@ options { tokenVocab=TSqlLexer; }
 
 tsql_file
     : batch_with_out_go (go_statement batch_with_out_go?)* go_statement? EOF
+    | go_statement* EOF
     ;
 
 batch_with_out_go
@@ -4927,7 +4928,7 @@ entity_name_for_parallel_dw
 full_table_name
     : id_ (
             dotID+
-            | doubleDotID dotID
+            | doubleDotID dotID?
         )?
     ;
 
@@ -4965,7 +4966,9 @@ ddl_object
     ;
 
 full_column_name
-    : ((DELETED | INSERTED | full_table_name) '.')? (column_name=id_ | ('$' (IDENTITY | ROWGUID)))
+    : (DELETED | INSERTED) (column_name=id_ | ('$' (IDENTITY | ROWGUID)))
+    | full_table_name '.' (column_name=id_ | ('$' (IDENTITY | ROWGUID)))
+    | (column_name=id_ | ('$' (IDENTITY | ROWGUID)))
     ;
 
 column_name_list_with_order
