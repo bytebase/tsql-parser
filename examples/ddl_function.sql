@@ -28,6 +28,7 @@ AS
 
    RETURN
 END
+GO
 
 --Alter Function, should behave the same as create function, except the ALTER keyword
 ALTER FUNCTION [dbo].[Foo](@String nvarchar(4000))

@@ -138,6 +138,7 @@ ELSE
             ON o.uid = l.sid
         WHERE l.name = @nm
     END;
+GO
 
 -----------------------------------------------------------------------
 -- THROW https://msdn.microsoft.com/en-us/library/ee677615.aspx

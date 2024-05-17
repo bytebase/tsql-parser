@@ -385,6 +385,7 @@ INSERT TY (Y_name)
    VALUES ('boathouse'), ('rocks'), ('elevator');
 
 SELECT * FROM TY;
+GO
 
 CREATE TRIGGER Ztrig
 ON TZ
@@ -392,6 +393,7 @@ FOR INSERT AS
    BEGIN
    INSERT TY VALUES ('')
    END;
+GO
 
 INSERT TZ VALUES ('Rosalie');
 

@@ -26,11 +26,11 @@ func (s *BaseTSqlParserListener) EnterTsql_file(ctx *Tsql_fileContext) {}
 // ExitTsql_file is called when production tsql_file is exited.
 func (s *BaseTSqlParserListener) ExitTsql_file(ctx *Tsql_fileContext) {}
 
-// EnterBatch is called when production batch is entered.
-func (s *BaseTSqlParserListener) EnterBatch(ctx *BatchContext) {}
+// EnterBatch_without_go is called when production batch_without_go is entered.
+func (s *BaseTSqlParserListener) EnterBatch_without_go(ctx *Batch_without_goContext) {}
 
-// ExitBatch is called when production batch is exited.
-func (s *BaseTSqlParserListener) ExitBatch(ctx *BatchContext) {}
+// ExitBatch_without_go is called when production batch_without_go is exited.
+func (s *BaseTSqlParserListener) ExitBatch_without_go(ctx *Batch_without_goContext) {}
 
 // EnterBatch_level_statement is called when production batch_level_statement is entered.
 func (s *BaseTSqlParserListener) EnterBatch_level_statement(ctx *Batch_level_statementContext) {}
@@ -3230,12 +3230,6 @@ func (s *BaseTSqlParserListener) EnterTable_sources(ctx *Table_sourcesContext) {
 // ExitTable_sources is called when production table_sources is exited.
 func (s *BaseTSqlParserListener) ExitTable_sources(ctx *Table_sourcesContext) {}
 
-// EnterNon_ansi_join is called when production non_ansi_join is entered.
-func (s *BaseTSqlParserListener) EnterNon_ansi_join(ctx *Non_ansi_joinContext) {}
-
-// ExitNon_ansi_join is called when production non_ansi_join is exited.
-func (s *BaseTSqlParserListener) ExitNon_ansi_join(ctx *Non_ansi_joinContext) {}
-
 // EnterTable_source is called when production table_source is entered.
 func (s *BaseTSqlParserListener) EnterTable_source(ctx *Table_sourceContext) {}
 
@@ -4962,6 +4956,18 @@ func (s *BaseTSqlParserListener) EnterFull_table_name(ctx *Full_table_nameContex
 
 // ExitFull_table_name is called when production full_table_name is exited.
 func (s *BaseTSqlParserListener) ExitFull_table_name(ctx *Full_table_nameContext) {}
+
+// EnterDotID is called when production dotID is entered.
+func (s *BaseTSqlParserListener) EnterDotID(ctx *DotIDContext) {}
+
+// ExitDotID is called when production dotID is exited.
+func (s *BaseTSqlParserListener) ExitDotID(ctx *DotIDContext) {}
+
+// EnterDoubleDotID is called when production doubleDotID is entered.
+func (s *BaseTSqlParserListener) EnterDoubleDotID(ctx *DoubleDotIDContext) {}
+
+// ExitDoubleDotID is called when production doubleDotID is exited.
+func (s *BaseTSqlParserListener) ExitDoubleDotID(ctx *DoubleDotIDContext) {}
 
 // EnterTable_name is called when production table_name is entered.
 func (s *BaseTSqlParserListener) EnterTable_name(ctx *Table_nameContext) {}
