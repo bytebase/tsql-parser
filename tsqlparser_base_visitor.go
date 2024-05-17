@@ -1,4 +1,4 @@
-// Code generated from TSqlParser.g4 by ANTLR 4.13.0. DO NOT EDIT.
+// Code generated from TSqlParser.g4 by ANTLR 4.13.1. DO NOT EDIT.
 
 package parser // TSqlParser
 import "github.com/antlr4-go/antlr/v4"
@@ -11,7 +11,7 @@ func (v *BaseTSqlParserVisitor) VisitTsql_file(ctx *Tsql_fileContext) interface{
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseTSqlParserVisitor) VisitBatch(ctx *BatchContext) interface{} {
+func (v *BaseTSqlParserVisitor) VisitBatch_with_out_go(ctx *Batch_with_out_goContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
@@ -1979,10 +1979,6 @@ func (v *BaseTSqlParserVisitor) VisitTable_sources(ctx *Table_sourcesContext) in
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseTSqlParserVisitor) VisitNon_ansi_join(ctx *Non_ansi_joinContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
 func (v *BaseTSqlParserVisitor) VisitTable_source(ctx *Table_sourceContext) interface{} {
 	return v.VisitChildren(ctx)
 }
@@ -3120,6 +3116,14 @@ func (v *BaseTSqlParserVisitor) VisitEntity_name_for_parallel_dw(ctx *Entity_nam
 }
 
 func (v *BaseTSqlParserVisitor) VisitFull_table_name(ctx *Full_table_nameContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseTSqlParserVisitor) VisitDotID(ctx *DotIDContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseTSqlParserVisitor) VisitDoubleDotID(ctx *DoubleDotIDContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 

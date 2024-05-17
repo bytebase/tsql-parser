@@ -1,4 +1,4 @@
-// Code generated from TSqlParser.g4 by ANTLR 4.13.0. DO NOT EDIT.
+// Code generated from TSqlParser.g4 by ANTLR 4.13.1. DO NOT EDIT.
 
 package parser // TSqlParser
 import "github.com/antlr4-go/antlr/v4"
@@ -10,8 +10,8 @@ type TSqlParserVisitor interface {
 	// Visit a parse tree produced by TSqlParser#tsql_file.
 	VisitTsql_file(ctx *Tsql_fileContext) interface{}
 
-	// Visit a parse tree produced by TSqlParser#batch.
-	VisitBatch(ctx *BatchContext) interface{}
+	// Visit a parse tree produced by TSqlParser#batch_with_out_go.
+	VisitBatch_with_out_go(ctx *Batch_with_out_goContext) interface{}
 
 	// Visit a parse tree produced by TSqlParser#batch_level_statement.
 	VisitBatch_level_statement(ctx *Batch_level_statementContext) interface{}
@@ -1486,9 +1486,6 @@ type TSqlParserVisitor interface {
 	// Visit a parse tree produced by TSqlParser#table_sources.
 	VisitTable_sources(ctx *Table_sourcesContext) interface{}
 
-	// Visit a parse tree produced by TSqlParser#non_ansi_join.
-	VisitNon_ansi_join(ctx *Non_ansi_joinContext) interface{}
-
 	// Visit a parse tree produced by TSqlParser#table_source.
 	VisitTable_source(ctx *Table_sourceContext) interface{}
 
@@ -2343,6 +2340,12 @@ type TSqlParserVisitor interface {
 
 	// Visit a parse tree produced by TSqlParser#full_table_name.
 	VisitFull_table_name(ctx *Full_table_nameContext) interface{}
+
+	// Visit a parse tree produced by TSqlParser#dotID.
+	VisitDotID(ctx *DotIDContext) interface{}
+
+	// Visit a parse tree produced by TSqlParser#doubleDotID.
+	VisitDoubleDotID(ctx *DoubleDotIDContext) interface{}
 
 	// Visit a parse tree produced by TSqlParser#table_name.
 	VisitTable_name(ctx *Table_nameContext) interface{}

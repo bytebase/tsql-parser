@@ -28,14 +28,13 @@ parser grammar TSqlParser;
 options { tokenVocab=TSqlLexer; }
 
 tsql_file
-    : batch* EOF
-    | execute_body_batch go_statement* EOF
+    : batch_with_out_go (go_statement batch_with_out_go?)? go_statement? EOF
     ;
 
-batch
-    : go_statement
-    | execute_body_batch? (go_statement | sql_clauses+) go_statement*
-    | batch_level_statement go_statement*
+batch_with_out_go
+    : sql_clauses+
+    | batch_level_statement
+    | execute_body_batch sql_clauses*
     ;
 
 batch_level_statement
@@ -1945,8 +1944,7 @@ insert_statement
     ;
 
 insert_statement_value
-    : table_value_constructor
-    | derived_table
+    : derived_table
     | execute_statement
     | DEFAULT VALUES
     ;
@@ -4015,14 +4013,9 @@ select_list_elem
     ;
 
 table_sources
-    : non_ansi_join
-    | source+=table_source (',' source+=table_source)*
+    : source+=table_source (',' source+=table_source)*
     ;
 
-// https://sqlenlight.com/support/help/sa0006/
-non_ansi_join
-    : source+=table_source (',' source+=table_source)+
-    ;
 
 // https://docs.microsoft.com/en-us/sql/t-sql/queries/from-transact-sql
 table_source
@@ -4912,12 +4905,25 @@ entity_name_for_parallel_dw
     | schema=id_ '.' object_name=id_
     ;
 
+//full_table_name
+//    : (linkedServer=id_ '.' '.' schema=id_   '.'
+//    |                       server=id_    '.' database=id_ '.'  schema=id_   '.'
+//    |                                         database=id_ '.'  schema=id_? '.'
+//    |                                                           schema=id_    '.')? table=id_
+//    ;
+// Rewrite full_table_name to avoid leading optional values.
 full_table_name
-    : (linkedServer=id_ '.' '.' schema=id_   '.'
-    |                       server=id_    '.' database=id_ '.'  schema=id_   '.'
-    |                                         database=id_ '.'  schema=id_? '.'
-    |                                                           schema=id_    '.')? table=id_
+    : id_ (
+            dotID+
+            | doubleDotID dotID
+        )?
     ;
+
+dotID
+    : '.' id_;
+
+doubleDotID
+    : '.' '.' id_;
 
 table_name
     : (database=id_ '.' schema=id_? '.' | schema=id_ '.')? (table=id_ | blocking_hierarchy=BLOCKING_HIERARCHY)

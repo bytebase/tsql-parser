@@ -1,4 +1,4 @@
-// Code generated from TSqlParser.g4 by ANTLR 4.13.0. DO NOT EDIT.
+// Code generated from TSqlParser.g4 by ANTLR 4.13.1. DO NOT EDIT.
 
 package parser // TSqlParser
 import "github.com/antlr4-go/antlr/v4"
@@ -10,8 +10,8 @@ type TSqlParserListener interface {
 	// EnterTsql_file is called when entering the tsql_file production.
 	EnterTsql_file(c *Tsql_fileContext)
 
-	// EnterBatch is called when entering the batch production.
-	EnterBatch(c *BatchContext)
+	// EnterBatch_with_out_go is called when entering the batch_with_out_go production.
+	EnterBatch_with_out_go(c *Batch_with_out_goContext)
 
 	// EnterBatch_level_statement is called when entering the batch_level_statement production.
 	EnterBatch_level_statement(c *Batch_level_statementContext)
@@ -1486,9 +1486,6 @@ type TSqlParserListener interface {
 	// EnterTable_sources is called when entering the table_sources production.
 	EnterTable_sources(c *Table_sourcesContext)
 
-	// EnterNon_ansi_join is called when entering the non_ansi_join production.
-	EnterNon_ansi_join(c *Non_ansi_joinContext)
-
 	// EnterTable_source is called when entering the table_source production.
 	EnterTable_source(c *Table_sourceContext)
 
@@ -2344,6 +2341,12 @@ type TSqlParserListener interface {
 	// EnterFull_table_name is called when entering the full_table_name production.
 	EnterFull_table_name(c *Full_table_nameContext)
 
+	// EnterDotID is called when entering the dotID production.
+	EnterDotID(c *DotIDContext)
+
+	// EnterDoubleDotID is called when entering the doubleDotID production.
+	EnterDoubleDotID(c *DoubleDotIDContext)
+
 	// EnterTable_name is called when entering the table_name production.
 	EnterTable_name(c *Table_nameContext)
 
@@ -2452,8 +2455,8 @@ type TSqlParserListener interface {
 	// ExitTsql_file is called when exiting the tsql_file production.
 	ExitTsql_file(c *Tsql_fileContext)
 
-	// ExitBatch is called when exiting the batch production.
-	ExitBatch(c *BatchContext)
+	// ExitBatch_with_out_go is called when exiting the batch_with_out_go production.
+	ExitBatch_with_out_go(c *Batch_with_out_goContext)
 
 	// ExitBatch_level_statement is called when exiting the batch_level_statement production.
 	ExitBatch_level_statement(c *Batch_level_statementContext)
@@ -3928,9 +3931,6 @@ type TSqlParserListener interface {
 	// ExitTable_sources is called when exiting the table_sources production.
 	ExitTable_sources(c *Table_sourcesContext)
 
-	// ExitNon_ansi_join is called when exiting the non_ansi_join production.
-	ExitNon_ansi_join(c *Non_ansi_joinContext)
-
 	// ExitTable_source is called when exiting the table_source production.
 	ExitTable_source(c *Table_sourceContext)
 
@@ -4785,6 +4785,12 @@ type TSqlParserListener interface {
 
 	// ExitFull_table_name is called when exiting the full_table_name production.
 	ExitFull_table_name(c *Full_table_nameContext)
+
+	// ExitDotID is called when exiting the dotID production.
+	ExitDotID(c *DotIDContext)
+
+	// ExitDoubleDotID is called when exiting the doubleDotID production.
+	ExitDoubleDotID(c *DoubleDotIDContext)
 
 	// ExitTable_name is called when exiting the table_name production.
 	ExitTable_name(c *Table_nameContext)
