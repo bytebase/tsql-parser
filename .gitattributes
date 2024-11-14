@@ -1,0 +1,2 @@
+port/cpp/* linguist-vendored
+*.go -linguist-generated
