@@ -28,8 +28,8 @@ parser grammar TSqlParser;
 options { tokenVocab=TSqlLexer; }
 
 tsql_file
-    : batch_without_go (go_statement batch_without_go?)* go_statement? EOF
-    | go_statement* EOF
+    : go_statement* EOF
+    | batch_without_go (go_statement batch_without_go?)* go_statement? EOF
     ;
 
 batch_without_go
